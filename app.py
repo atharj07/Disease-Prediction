@@ -59,6 +59,8 @@ def app():
     bmi = st.sidebar.slider('BMI', 0.0, 67.1, 32.0)
     dpf = st.sidebar.slider('Diabetes Pedigree Function', 0.078, 2.42, 0.3725, 0.001)
     age = st.sidebar.slider('Age', 21, 81, 29)
+    
+
 
     # make a prediction based on the user input
     input_data = [preg, glucose, bp, skinthickness, insulin, bmi, dpf, age]
@@ -77,6 +79,7 @@ def app():
     st.header('Dataset Summary')
     st.write(diabetes_df.describe())
 
+    # header
     st.header('Distribution by Outcome')
     st.write(diabetes_mean_df)
 
@@ -84,6 +87,8 @@ def app():
     st.header('Model Accuracy')
     st.write(f'Train set accuracy: {train_acc:.2f}')
     st.write(f'Test set accuracy: {test_acc:.2f}')
+    st.write(f'Test set accuracy:{test_acc:.2f}')
 
 if __name__ == '__main__':
     app()
+
